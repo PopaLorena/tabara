@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ContextDb>(options =>
+builder.Services.AddDbContextPool<ContextDb>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ContextConnectionString")));
 var app = builder.Build();
 
